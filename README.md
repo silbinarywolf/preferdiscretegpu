@@ -104,11 +104,6 @@ File Type: EXECUTABLE IMAGE
         1000 .xdata
 ```
 
-## Resources
-
-* [NVIDIA Optimus](https://docs.nvidia.com/gameworks/content/technologies/desktop/optimus.htm) documentation
-* [NVIDIA Optimus](https://docs.nvidia.com/gameworks/content/technologies/desktop/optimus.htm) documentation
-
 ## Credits
 
 * [Hakan Guleryuz](https://groups.google.com/forum/#!topic/golang-nuts/7OHZcXUegF0) for documenting how they were able to export the NVIDIA/AMD variables in Golang and for giving information
