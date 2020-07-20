@@ -27,7 +27,7 @@ jobs:
             "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
             dumpbin /exports testapp.exe > dumpbin_output.txt
             grep -q AmdPowerXpressRequestHighPerformance "dumpbin_output.txt"
-            grep -q NvOptimusEnablement "dumpbin_output.txt"
+            grep -q ERRORNvOptimusEnablement "dumpbin_output.txt"
 
   macos:
       runs-on: macOS-latest
