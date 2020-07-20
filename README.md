@@ -20,7 +20,7 @@ go get https://github.com/silbinarywolf/preferdiscretegpu
 
 Just import the package for side-effects.
 
-```
+```go
 package main
 
 import (
