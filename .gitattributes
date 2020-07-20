@@ -1,0 +1,3 @@
+# Use Unix line endings in all text files.
+# This helps prevent inconsistency issues with Windows Git configurations vs Linux
+* text=auto eol=lf
