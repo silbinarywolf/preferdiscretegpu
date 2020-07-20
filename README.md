@@ -6,6 +6,8 @@
 
 For laptops with multiple GPUs, its likely that applications won't launch using the discrete GPU on Windows, but rather the integrated GPU. This can lead to real-time applications like games under-performing by default, which is not the ideal user experience.
 
+This library exports global variables for NVIDIA and AMD drivers so that they use high performance graphics rendering settings.
+
 ## Install
 
 ```
@@ -18,7 +20,7 @@ go get https://github.com/silbinarywolf/preferdiscretegpu
 
 ## How to use
 
-Just import the package for side-effects.
+Just import the package for side-effects. This will have no additional behaviour on non-Windows systems.
 
 ```go
 package main
@@ -101,6 +103,11 @@ File Type: EXECUTABLE IMAGE
         1000 .tls
         1000 .xdata
 ```
+
+## Resources
+
+* [NVIDIA Optimus](https://docs.nvidia.com/gameworks/content/technologies/desktop/optimus.htm) documentation
+* [NVIDIA Optimus](https://docs.nvidia.com/gameworks/content/technologies/desktop/optimus.htm) documentation
 
 ## Credits
 
