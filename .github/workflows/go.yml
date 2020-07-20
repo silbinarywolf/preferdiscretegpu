@@ -1,0 +1,49 @@
+name: Go
+on: [push, pull_request]
+jobs:
+  windows:
+      runs-on: windows-latest
+      strategy:
+        matrix:
+          go: ['1.12', '1.13', '1.14']
+      name: Go ${{ matrix.go }} on Windows
+      steps:
+        - name: Check out code into the Go module directory
+          uses: actions/checkout@v2
+
+        - name: Setup Go
+          uses: actions/setup-go@v2
+          with:
+            go-version: ${{ matrix.go }}
+
+        - name: Build
+          shell: bash
+          run: |
+            go build -v -o testapp.exe ./testapp
+
+        - name: Test
+          shell: cmd
+          run: |
+            call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
+            dumpbin /exports testapp.exe > dumpbin_output.txt
+            grep -q AmdPowerXpressRequestHighPerformance "dumpbin_output.txt"
+            grep -q NvOptimusEnablement "dumpbin_output.txt"
+
+  macos:
+      runs-on: macOS-latest
+      strategy:
+        matrix:
+          go: ['1.12']
+      name: Go ${{ matrix.go }} on MacOS
+      steps:
+        - name: Check out code into the Go module directory
+          uses: actions/checkout@v2
+
+        - name: Setup Go
+          uses: actions/setup-go@v2
+          with:
+            go-version: ${{ matrix.go }}
+
+        - name: Build
+          run: |
+            go build -v -o test ./testapp

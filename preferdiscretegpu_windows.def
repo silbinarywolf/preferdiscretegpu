@@ -1,0 +1,3 @@
+EXPORTS
+   NvOptimusEnablement @1 DATA
+   AmdPowerXpressRequestHighPerformance @2 DATA
