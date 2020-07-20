@@ -1,6 +1,8 @@
 # Prefer Discrete GPU
 
-**This is a CGo package**
+[![Actions Status](https://github.com/silbinarywolf/preferdiscretegpu/workflows/Go/badge.svg)](https://github.com/silbinarywolf/preferdiscretegpu/actions)
+
+**This is a CGo package. Unfortunately there is no way to enable this behaviour without CGo as of Go 1.14**
 
 For laptops with multiple GPUs, its likely that applications won't launch using the discrete GPU on Windows, but rather the integrated GPU. This can lead to real-time applications like games under-performing by default, which is not the ideal user experience.
 
@@ -15,6 +17,8 @@ go get https://github.com/silbinarywolf/preferdiscretegpu
 * Golang 1.12+
 
 ## How to use
+
+Just import the package for side-effects.
 
 ```
 package main
@@ -32,10 +36,10 @@ func main() {
 
 ## How to test if this package is working
 
-1) Open up the Windows Command Line and run the following:
+1) Open up the Windows Command Line (not Powershell) and run the following:
 **note: if you have have an older or newer version of Visual Studio installed, vcvarsall.bat will be in a different folder**
 ```
-"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
+call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
 ```
 
 2) Build the test application that consumes this library

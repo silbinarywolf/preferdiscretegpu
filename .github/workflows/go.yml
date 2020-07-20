@@ -5,7 +5,7 @@ jobs:
       runs-on: windows-latest
       strategy:
         matrix:
-          go: ['1.12']
+          go: ['1.12', '1.13', '1.14']
       name: Go ${{ matrix.go }} on Windows
       steps:
         - name: Check out code into the Go module directory
@@ -27,7 +27,7 @@ jobs:
             call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
             dumpbin /exports testapp.exe > dumpbin_output.txt
             grep -q AmdPowerXpressRequestHighPerformance "dumpbin_output.txt"
-            grep -q BREAKONPURPOSENvOptimusEnablement "dumpbin_output.txt"
+            grep -q NvOptimusEnablement "dumpbin_output.txt"
 
   macos:
       runs-on: macOS-latest
