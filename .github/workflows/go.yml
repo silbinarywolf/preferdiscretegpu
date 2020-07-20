@@ -21,7 +21,7 @@ jobs:
           run: |
             go build -v ./testapp
 
-        - name: Setup environment for dumpbin
+        - name: Test
           shell: cmd
           run: |
             echo ::add-path::C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE
@@ -30,10 +30,6 @@ jobs:
             echo ::set-env name=LIB::C:\Program Files (x86)\Microsoft SDKs\Windows\v6.0A\Lib;%LIB%
             echo ::set-env name=LIB::C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Lib;%LIB%
             echo ::set-env name=INCLUDE::C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include;%INCLUDE%
-        
-        - name: Test
-          shell: cmd
-          run: |
             dumpbin /exports testapp.exe
 
   macos:
