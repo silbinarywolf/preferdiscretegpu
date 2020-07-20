@@ -39,7 +39,8 @@ func main() {
 ## How to test if this package is working
 
 1) Open up the Windows Command Line (not Powershell) and run the following:
-**note: if you have have an older or newer version of Visual Studio installed, vcvarsall.bat will be in a different folder**
+
+**NOTE: if you have have an older or newer version of Visual Studio installed, vcvarsall.bat will be in a different folder**
 ```
 call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
 ```
