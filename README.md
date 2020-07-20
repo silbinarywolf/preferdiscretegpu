@@ -4,6 +4,32 @@
 
 For laptops with multiple GPUs, its likely that applications won't launch using the discrete GPU on Windows, but rather the integrated GPU. This can lead to real-time applications like games under-performing by default, which is not the ideal user experience.
 
+## Install
+
+```
+go get https://github.com/silbinarywolf/preferdiscretegpu
+```
+
+## Requirements
+
+* Golang 1.12+
+
+## How to use
+
+```
+package main
+
+import (
+	"fmt"
+
+	_ "github.com/silbinarywolf/preferdiscretegpu"
+)
+
+func main() {
+	// your code here
+}
+```
+
 ## How to test if this package is working
 
 1) Open up the Windows Command Line and run the following:
