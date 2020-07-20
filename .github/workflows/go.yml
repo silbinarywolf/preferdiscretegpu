@@ -19,7 +19,7 @@ jobs:
         - name: Build
           shell: bash
           run: |
-            go build -v ./testapp
+            go build -v ./testapp -o testapp.exe
 
         - name: Test
           shell: cmd
@@ -49,4 +49,4 @@ jobs:
 
         - name: Build
           run: |
-            go build -v ./testapp
+            go build -v ./testapp -o test
