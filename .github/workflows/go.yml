@@ -21,14 +21,10 @@ jobs:
           run: |
             go build -v -o testapp.exe ./testapp
 
-        - name: Setup Visual Studio Environment Vars
-          shell: cmd
-          run: |
-            "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
-
         - name: Test
           shell: cmd
           run: |
+            call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"
             dumpbin /exports testapp.exe > dumpbin_output.txt
             bingleshoop "dumpbin_output.txt"
 
