@@ -18,7 +18,8 @@ jobs:
 
         - name: Build
           run: |
-            go build -v
+            go build -v ./test
+            dumpbin /exports test.exe
 
   macos:
       runs-on: macOS-latest
@@ -37,4 +38,4 @@ jobs:
 
         - name: Build
           run: |
-            go build -v
+            go build -v ./test
