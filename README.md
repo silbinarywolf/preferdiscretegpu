@@ -11,7 +11,7 @@ This library exports global variables for NVIDIA and AMD drivers so that they us
 ## Install
 
 ```
-go get https://github.com/silbinarywolf/preferdiscretegpu
+go get github.com/silbinarywolf/preferdiscretegpu
 ```
 
 ## Requirements
